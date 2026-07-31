@@ -171,21 +171,6 @@
   }
   .video-slot video{ width:100%; height:100%; max-height:70vh; object-fit: contain; display:block; background:#05070c; }
   .video-slot iframe{ width:100%; aspect-ratio:16/9; max-height:70vh; border:0; display:block; background:#05070c; }
-  .video-empty{ text-align:center; color: rgba(255,255,255,0.7); padding: 40px 20px; }
-  .video-empty .icon{ width:52px; height:52px; margin:0 auto 14px; border-radius:50%; background: linear-gradient(140deg,var(--violet),var(--magenta)); display:flex; align-items:center; justify-content:center; }
-  .video-empty .title-txt{ font-weight:700; font-size:14.5px; margin-bottom:4px; color:#fff; }
-  .video-empty .sub-txt{ font-size:12.5px; color: rgba(255,255,255,0.55); }
-  .video-actions{ display:flex; gap:12px; margin-top:18px; flex-wrap:wrap; }
-  .btn-video{ font-family: var(--body); font-weight:700; font-size:13px; padding:11px 20px; border-radius:11px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px; }
-  .btn-video.primary{ background:#fff; color: var(--violet-deep); }
-  .btn-video.primary:hover{ background: #f1ecff; }
-  .btn-video.ghost{ background: rgba(255,255,255,0.08); color:#fff; border:1px solid rgba(255,255,255,0.25); }
-  .btn-video.ghost:hover{ background: rgba(255,255,255,0.15); }
-  .video-drive-form{ display:none; gap:10px; margin-top:14px; flex-wrap:wrap; align-items:center; }
-  .video-drive-form.open{ display:flex; }
-  .video-drive-form input[type="text"]{ flex:1 1 260px; min-width:200px; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.06); color:#fff; font-family: var(--body); font-size:13px; }
-  .video-drive-form input[type="text"]::placeholder{ color: rgba(255,255,255,0.45); }
-  .video-drive-note{ width:100%; font-size:12px; color: rgba(255,255,255,0.5); margin-top:-2px; }
 
   /* REFERENCES */
   .ref-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
@@ -210,15 +195,6 @@
   .reveal{ opacity:0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.in{ opacity:1; transform:translateY(0); }
 
-  /* editor toolbar */
-  #editorToolbar{ position:fixed; bottom:20px; right:20px; z-index:200; background:#171225; color:#fff; border-radius:16px; padding:14px 16px; box-shadow: 0 20px 50px -15px rgba(0,0,0,0.5); font-family: var(--body); max-width:280px; }
-  #editorToolbar .et-row{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
-  #editorToolbar button{ font-family: var(--body); font-size:12.5px; font-weight:700; border:none; border-radius:9px; padding:8px 12px; cursor:pointer; }
-  #editorToolbar .et-primary{ background: linear-gradient(100deg,var(--violet),var(--magenta)); color:#fff; }
-  #editorToolbar .et-ghost{ background: rgba(255,255,255,0.1); color:#fff; }
-  #editorToolbar .et-title{ font-weight:800; font-size:13px; }
-  #editorToolbar .et-hint{ font-size:11.5px; color:rgba(255,255,255,0.6); margin-top:8px; line-height:1.4; }
-  #editorToolbar.minimized .et-body{ display:none; }
 </style>
 </head>
 <body>
@@ -404,28 +380,10 @@
     <h2 class="sec-title">Video Introduction</h2>
     <div class="video-panel">
       <div class="video-panel-inner">
-        <h3>Add a short intro or demo reel</h3>
-        <p class="hint">Upload a video straight from your device — it plays right here in the portfolio. Use it for a short self-intro, a project demo, or a highlight reel for faculty review.</p>
+        <h3>Intro & demo reel</h3>
+        <p class="hint">A short self-intro and project walkthrough.</p>
         <div class="video-slot" id="videoSlot">
-          <div class="video-empty" id="videoEmpty" style="display: none;">
-            <div class="icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg>
-            </div>
-            <div class="title-txt">No video added yet</div>
-            <div class="sub-txt">Add a video from your device or a Google Drive link below</div>
-          </div>
         <iframe src="https://drive.google.com/file/d/1xT4Zdla5Po6UrHQXcPn7xHjKUlps5YH1/preview" allow="autoplay" allowfullscreen="" data-drive-id="1xT4Zdla5Po6UrHQXcPn7xHjKUlps5YH1"></iframe></div>
-        <div class="video-actions">
-          <button class="btn-video primary" id="addVideoBtn">⬆ Add video from device</button>
-          <button class="btn-video ghost" id="addDriveBtn">🔗 Add from Google Drive</button>
-          <button class="btn-video ghost" id="removeVideoBtn">Remove video</button>
-        </div>
-        <div class="video-drive-form" id="driveForm">
-          <input type="text" id="driveLinkInput" placeholder="Paste a Google Drive share link…">
-          <button class="btn-video primary" id="driveConfirmBtn">Use this link</button>
-          <div class="video-drive-note">Make sure the Drive file's sharing is set to "Anyone with the link" so it plays for visitors.</div>
-        </div>
-        <input type="file" id="videoInput" accept="video/*" style="display:none">
       </div>
     </div>
   </section>
@@ -477,18 +435,6 @@
   <footer class="foot">Md. Kamruzzaman Hridoy — Portfolio</footer>
 </div>
 
-<!-- Editor toolbar: lets the video (and photo) be saved back into the file -->
-<div id="editorToolbar" class="minimized">
-  <div class="et-title">✎ Portfolio editor</div>
-  <div class="et-body">
-    <div class="et-hint">Device videos: click "Save file with video" to embed it permanently. Google Drive links: they're saved automatically — no extra step needed. Don't use your browser's own "Save Page" — it won't keep the video.</div>
-    <div class="et-row">
-      <button class="et-primary" id="etSave">Save file with video</button>
-      <button class="et-ghost" id="etMin">✎</button>
-    </div>
-  </div>
-</div>
-
 <script>
   // ---------- scrollspy ----------
   const navLinks = document.querySelectorAll('#navLinks a');
@@ -511,179 +457,6 @@
   }, { threshold: 0.4 });
   document.querySelectorAll('.bar-fill').forEach(b => barIO.observe(b));
 
-  // ---------- video slot ----------
-  const videoSlot = document.getElementById('videoSlot');
-  const videoEmpty = document.getElementById('videoEmpty');
-  const addVideoBtn = document.getElementById('addVideoBtn');
-  const addDriveBtn = document.getElementById('addDriveBtn');
-  const removeVideoBtn = document.getElementById('removeVideoBtn');
-  const videoInput = document.getElementById('videoInput');
-  const driveForm = document.getElementById('driveForm');
-  const driveLinkInput = document.getElementById('driveLinkInput');
-  const driveConfirmBtn = document.getElementById('driveConfirmBtn');
-
-  function clearVideoSlot(){
-    const vid = videoSlot.querySelector('video');
-    const frame = videoSlot.querySelector('iframe');
-    if (vid) vid.remove();
-    if (frame) frame.remove();
-    videoEmpty.style.display = 'block';
-  }
-
-  function showDeviceVideo(url, fileName){
-    clearVideoSlot();
-    videoEmpty.style.display = 'none';
-    const vid = document.createElement('video');
-    vid.controls = true;
-    vid.playsInline = true;
-    vid.dataset.fileName = fileName || '';
-    vid.addEventListener('error', () => {
-      // The source (e.g. a stale blob URL from a previous session) can't be played back.
-      clearVideoSlot();
-      alert('That video could not be loaded — please re-add it from your device.');
-    });
-    vid.src = url;
-    videoSlot.appendChild(vid);
-  }
-
-  // Extract a Google Drive file ID from any common share-link format.
-  function extractDriveFileId(input){
-    const patterns = [
-      /\/file\/d\/([a-zA-Z0-9_-]+)/,
-      /[?&]id=([a-zA-Z0-9_-]+)/,
-      /^([a-zA-Z0-9_-]{20,})$/
-    ];
-    for (const p of patterns){
-      const m = input.match(p);
-      if (m) return m[1];
-    }
-    return null;
-  }
-
-  function showDriveVideo(link){
-    const id = extractDriveFileId(link.trim());
-    if (!id){
-      alert("Couldn't find a file ID in that link. Paste the full Google Drive share link (e.g. https://drive.google.com/file/d/FILE_ID/view).");
-      return;
-    }
-    clearVideoSlot();
-    videoEmpty.style.display = 'none';
-    const frame = document.createElement('iframe');
-    frame.src = 'https://drive.google.com/file/d/' + id + '/preview';
-    frame.allow = 'autoplay';
-    frame.allowFullscreen = true;
-    frame.dataset.driveId = id;
-    videoSlot.appendChild(frame);
-    driveForm.classList.remove('open');
-    driveLinkInput.value = '';
-  }
-
-  addVideoBtn.addEventListener('click', () => videoInput.click());
-
-  videoInput.addEventListener('change', (e) => {
-    const file = e.target.files && e.target.files[0];
-    if (!file) return;
-    const url = URL.createObjectURL(file);
-    showDeviceVideo(url, file.name);
-  });
-
-  addDriveBtn.addEventListener('click', () => {
-    driveForm.classList.toggle('open');
-    if (driveForm.classList.contains('open')) driveLinkInput.focus();
-  });
-
-  driveConfirmBtn.addEventListener('click', () => {
-    if (driveLinkInput.value.trim()) showDriveVideo(driveLinkInput.value);
-  });
-
-  driveLinkInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter'){ e.preventDefault(); if (driveLinkInput.value.trim()) showDriveVideo(driveLinkInput.value); }
-  });
-
-  removeVideoBtn.addEventListener('click', () => {
-    clearVideoSlot();
-    videoInput.value = '';
-    driveForm.classList.remove('open');
-    driveLinkInput.value = '';
-  });
-
-  // If a video element ships with a dead blob: URL (e.g. from a browser "Save Page" instead
-  // of the "Save file with video" button below), fall back to the empty state on load.
-  window.addEventListener('DOMContentLoaded', () => {
-    const vid = videoSlot.querySelector('video');
-    if (vid && vid.getAttribute('src') && vid.getAttribute('src').startsWith('blob:')){
-      clearVideoSlot();
-    }
-  });
-
-  // ---------- editor toolbar: minimize ----------
-  const etToolbar = document.getElementById('editorToolbar');
-  document.getElementById('etMin').addEventListener('click', () => {
-    etToolbar.classList.toggle('minimized');
-    document.getElementById('etMin').textContent = etToolbar.classList.contains('minimized') ? '✎' : '–';
-  });
-
-  // ---------- save file with video embedded ----------
-  function blobUrlToBase64(url){
-    return fetch(url).then(r => r.blob()).then(blob => new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = reject;
-      reader.readAsDataURL(blob);
-    }));
-  }
-
-  document.getElementById('etSave').addEventListener('click', async () => {
-    const vid = videoSlot.querySelector('video');
-    const saveBtn = document.getElementById('etSave');
-    const originalText = saveBtn.textContent;
-
-    if (vid && vid.src && vid.src.startsWith('blob:')){
-      saveBtn.textContent = 'Embedding video…';
-      saveBtn.disabled = true;
-      try{
-        const dataUrl = await blobUrlToBase64(vid.src);
-        const clone = document.documentElement.cloneNode(true);
-        const cloneVid = clone.querySelector('#videoSlot video');
-        if (cloneVid){ cloneVid.src = dataUrl; }
-        const cloneEmpty = clone.querySelector('#videoEmpty');
-        if (cloneEmpty) cloneEmpty.style.display = 'none';
-        const toolbarClone = clone.querySelector('#editorToolbar');
-        if (toolbarClone) toolbarClone.remove();
-
-        const html = '<!DOCTYPE html>\n' + clone.outerHTML;
-        const blob = new Blob([html], { type: 'text/html' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'hridoy-portfolio-with-video.html';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      } catch(err){
-        alert('Could not embed the video (it may be too large for a browser download). Try a shorter clip.');
-      } finally {
-        saveBtn.textContent = originalText;
-        saveBtn.disabled = false;
-      }
-    } else {
-      // no video yet, just save current state (photo etc.) as-is
-      const clone = document.documentElement.cloneNode(true);
-      const toolbarClone = clone.querySelector('#editorToolbar');
-      if (toolbarClone) toolbarClone.remove();
-      const html = '<!DOCTYPE html>\n' + clone.outerHTML;
-      const blob = new Blob([html], { type: 'text/html' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'hridoy-portfolio.html';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }
-  });
 </script>
 
 
