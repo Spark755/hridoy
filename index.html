@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0166)file:///Users/hridoyahmed/Library/CloudStorage/OneDrive-AmericanInternationalUniversity-Bangladesh/AIUB%20FILE/Md.%20Kamruzzaman%20Hridoy%20%E2%80%94%20Portfolio.html -->
+<!-- saved from url=(0089)file:///C:/Users/Asus/Downloads/Md.%20Kamruzzaman%20Hridoy21%20%E2%80%94%20Portfolio.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Md. Kamruzzaman Hridoy — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./Md. Kamruzzaman Hridoy — Portfolio_files/css2" rel="stylesheet">
+<link href="file:///C:/Users/Asus/Downloads/Md.%20Kamruzzaman%20Hridoy%20%E2%80%94%20Portfolio_files/css2" rel="stylesheet">
 <style>
   :root{
     --violet: #1f3a5f;      /* deep navy — primary */
@@ -165,12 +165,13 @@
   .video-panel p.hint{ color: rgba(255,255,255,0.62); font-size:13.5px; margin: 0 0 20px; max-width:56ch; }
   .video-slot{
     position:relative; border-radius: 20px; overflow:hidden;
-    aspect-ratio: 16/9; background: rgba(255,255,255,0.04);
+    min-height: 220px; max-height: 70vh; background: #05070c;
     border: 1.5px dashed rgba(255,255,255,0.28);
     display:flex; align-items:center; justify-content:center;
   }
-  .video-slot video{ width:100%; height:100%; object-fit: cover; display:block; }
-  .video-empty{ text-align:center; color: rgba(255,255,255,0.7); padding: 20px; }
+  .video-slot video{ width:100%; height:100%; max-height:70vh; object-fit: contain; display:block; background:#05070c; }
+  .video-slot iframe{ width:100%; aspect-ratio:16/9; max-height:70vh; border:0; display:block; background:#05070c; }
+  .video-empty{ text-align:center; color: rgba(255,255,255,0.7); padding: 40px 20px; }
   .video-empty .icon{ width:52px; height:52px; margin:0 auto 14px; border-radius:50%; background: linear-gradient(140deg,var(--violet),var(--magenta)); display:flex; align-items:center; justify-content:center; }
   .video-empty .title-txt{ font-weight:700; font-size:14.5px; margin-bottom:4px; color:#fff; }
   .video-empty .sub-txt{ font-size:12.5px; color: rgba(255,255,255,0.55); }
@@ -180,6 +181,11 @@
   .btn-video.primary:hover{ background: #f1ecff; }
   .btn-video.ghost{ background: rgba(255,255,255,0.08); color:#fff; border:1px solid rgba(255,255,255,0.25); }
   .btn-video.ghost:hover{ background: rgba(255,255,255,0.15); }
+  .video-drive-form{ display:none; gap:10px; margin-top:14px; flex-wrap:wrap; align-items:center; }
+  .video-drive-form.open{ display:flex; }
+  .video-drive-form input[type="text"]{ flex:1 1 260px; min-width:200px; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.06); color:#fff; font-family: var(--body); font-size:13px; }
+  .video-drive-form input[type="text"]::placeholder{ color: rgba(255,255,255,0.45); }
+  .video-drive-note{ width:100%; font-size:12px; color: rgba(255,255,255,0.5); margin-top:-2px; }
 
   /* REFERENCES */
   .ref-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
@@ -224,11 +230,11 @@
   <div class="nav-inner">
     <div class="nav-brand">Hridoy<span class="dot">.</span></div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="file:///Users/hridoyahmed/Downloads/hridoy-portfolio-formal%20(1).html#profile" data-target="profile" class="">Profile</a></li>
+      <li><a href="file:///Users/hridoyahmed/Downloads/hridoy-portfolio-formal%20(1).html#profile" data-target="profile" class="active">Profile</a></li>
       <li><a href="file:///Users/hridoyahmed/Downloads/hridoy-portfolio-formal%20(1).html#education" data-target="education" class="">Education</a></li>
       <li><a href="file:///Users/hridoyahmed/Downloads/hridoy-portfolio-formal%20(1).html#skills" data-target="skills" class="">Skills</a></li>
       <li><a href="file:///Users/hridoyahmed/Downloads/hridoy-portfolio-formal%20(1).html#achievements" data-target="achievements" class="">Achievements</a></li>
-      <li><a href="file:///Users/hridoyahmed/Downloads/hridoy-portfolio-formal%20(1).html#showcase" data-target="showcase" class="active">Showcase</a></li>
+      <li><a href="file:///Users/hridoyahmed/Downloads/hridoy-portfolio-formal%20(1).html#showcase" data-target="showcase" class="">Showcase</a></li>
       <li><a href="file:///Users/hridoyahmed/Downloads/hridoy-portfolio-formal%20(1).html#contact" data-target="contact">Contact</a></li>
     </ul>
   </div>
@@ -406,12 +412,18 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg>
             </div>
             <div class="title-txt">No video added yet</div>
-            <div class="sub-txt">Click "Add video" below to upload from your device</div>
+            <div class="sub-txt">Add a video from your device or a Google Drive link below</div>
           </div>
-        <video controls="" playsinline="" src="blob:null/6e2224a2-5147-4709-85b8-12c622942009" data-file-name="WhatsApp Video 2026-07-31 at 16.18.39.mp4"></video></div>
+        <iframe src="https://drive.google.com/file/d/1xT4Zdla5Po6UrHQXcPn7xHjKUlps5YH1/preview" allow="autoplay" allowfullscreen="" data-drive-id="1xT4Zdla5Po6UrHQXcPn7xHjKUlps5YH1"></iframe></div>
         <div class="video-actions">
           <button class="btn-video primary" id="addVideoBtn">⬆ Add video from device</button>
+          <button class="btn-video ghost" id="addDriveBtn">🔗 Add from Google Drive</button>
           <button class="btn-video ghost" id="removeVideoBtn">Remove video</button>
+        </div>
+        <div class="video-drive-form" id="driveForm">
+          <input type="text" id="driveLinkInput" placeholder="Paste a Google Drive share link…">
+          <button class="btn-video primary" id="driveConfirmBtn">Use this link</button>
+          <div class="video-drive-note">Make sure the Drive file's sharing is set to "Anyone with the link" so it plays for visitors.</div>
         </div>
         <input type="file" id="videoInput" accept="video/*" style="display:none">
       </div>
@@ -428,7 +440,7 @@
   </section>
 
   <!-- ========== REFERENCES ========== -->
-  <section class="reveal in">
+  <section class="reveal">
     <div class="sec-label"><span class="idx">08</span><span class="lab">Endorsements</span></div>
     <h2 class="sec-title">References</h2>
     <div class="ref-grid">
@@ -446,7 +458,7 @@
   </section>
 
   <!-- ========== CONTACT ========== -->
-  <section id="contact" class="reveal in">
+  <section id="contact" class="reveal">
     <div class="contact-strip">
       <div>
         <h3>Let's connect</h3>
@@ -469,7 +481,7 @@
 <div id="editorToolbar" class="minimized">
   <div class="et-title">✎ Portfolio editor</div>
   <div class="et-body">
-    <div class="et-hint">Add your video above, then click "Save file with video" to download a copy of this portfolio with the video permanently embedded.</div>
+    <div class="et-hint">Device videos: click "Save file with video" to embed it permanently. Google Drive links: they're saved automatically — no extra step needed. Don't use your browser's own "Save Page" — it won't keep the video.</div>
     <div class="et-row">
       <button class="et-primary" id="etSave">Save file with video</button>
       <button class="et-ghost" id="etMin">✎</button>
@@ -503,8 +515,68 @@
   const videoSlot = document.getElementById('videoSlot');
   const videoEmpty = document.getElementById('videoEmpty');
   const addVideoBtn = document.getElementById('addVideoBtn');
+  const addDriveBtn = document.getElementById('addDriveBtn');
   const removeVideoBtn = document.getElementById('removeVideoBtn');
   const videoInput = document.getElementById('videoInput');
+  const driveForm = document.getElementById('driveForm');
+  const driveLinkInput = document.getElementById('driveLinkInput');
+  const driveConfirmBtn = document.getElementById('driveConfirmBtn');
+
+  function clearVideoSlot(){
+    const vid = videoSlot.querySelector('video');
+    const frame = videoSlot.querySelector('iframe');
+    if (vid) vid.remove();
+    if (frame) frame.remove();
+    videoEmpty.style.display = 'block';
+  }
+
+  function showDeviceVideo(url, fileName){
+    clearVideoSlot();
+    videoEmpty.style.display = 'none';
+    const vid = document.createElement('video');
+    vid.controls = true;
+    vid.playsInline = true;
+    vid.dataset.fileName = fileName || '';
+    vid.addEventListener('error', () => {
+      // The source (e.g. a stale blob URL from a previous session) can't be played back.
+      clearVideoSlot();
+      alert('That video could not be loaded — please re-add it from your device.');
+    });
+    vid.src = url;
+    videoSlot.appendChild(vid);
+  }
+
+  // Extract a Google Drive file ID from any common share-link format.
+  function extractDriveFileId(input){
+    const patterns = [
+      /\/file\/d\/([a-zA-Z0-9_-]+)/,
+      /[?&]id=([a-zA-Z0-9_-]+)/,
+      /^([a-zA-Z0-9_-]{20,})$/
+    ];
+    for (const p of patterns){
+      const m = input.match(p);
+      if (m) return m[1];
+    }
+    return null;
+  }
+
+  function showDriveVideo(link){
+    const id = extractDriveFileId(link.trim());
+    if (!id){
+      alert("Couldn't find a file ID in that link. Paste the full Google Drive share link (e.g. https://drive.google.com/file/d/FILE_ID/view).");
+      return;
+    }
+    clearVideoSlot();
+    videoEmpty.style.display = 'none';
+    const frame = document.createElement('iframe');
+    frame.src = 'https://drive.google.com/file/d/' + id + '/preview';
+    frame.allow = 'autoplay';
+    frame.allowFullscreen = true;
+    frame.dataset.driveId = id;
+    videoSlot.appendChild(frame);
+    driveForm.classList.remove('open');
+    driveLinkInput.value = '';
+  }
 
   addVideoBtn.addEventListener('click', () => videoInput.click());
 
@@ -512,23 +584,36 @@
     const file = e.target.files && e.target.files[0];
     if (!file) return;
     const url = URL.createObjectURL(file);
-    videoEmpty.style.display = 'none';
-    let vid = videoSlot.querySelector('video');
-    if (!vid){
-      vid = document.createElement('video');
-      vid.controls = true;
-      vid.playsInline = true;
-      videoSlot.appendChild(vid);
-    }
-    vid.src = url;
-    vid.dataset.fileName = file.name;
+    showDeviceVideo(url, file.name);
+  });
+
+  addDriveBtn.addEventListener('click', () => {
+    driveForm.classList.toggle('open');
+    if (driveForm.classList.contains('open')) driveLinkInput.focus();
+  });
+
+  driveConfirmBtn.addEventListener('click', () => {
+    if (driveLinkInput.value.trim()) showDriveVideo(driveLinkInput.value);
+  });
+
+  driveLinkInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter'){ e.preventDefault(); if (driveLinkInput.value.trim()) showDriveVideo(driveLinkInput.value); }
   });
 
   removeVideoBtn.addEventListener('click', () => {
-    const vid = videoSlot.querySelector('video');
-    if (vid) vid.remove();
-    videoEmpty.style.display = 'block';
+    clearVideoSlot();
     videoInput.value = '';
+    driveForm.classList.remove('open');
+    driveLinkInput.value = '';
+  });
+
+  // If a video element ships with a dead blob: URL (e.g. from a browser "Save Page" instead
+  // of the "Save file with video" button below), fall back to the empty state on load.
+  window.addEventListener('DOMContentLoaded', () => {
+    const vid = videoSlot.querySelector('video');
+    if (vid && vid.getAttribute('src') && vid.getAttribute('src').startsWith('blob:')){
+      clearVideoSlot();
+    }
   });
 
   // ---------- editor toolbar: minimize ----------
